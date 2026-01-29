@@ -1,0 +1,733 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{geometry}
+\usepackage{ulem}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{multicol}
+\geometry{margin=2.5cm}
+\begin{multicols}{2}
+
+\begin{document}
+
+UMBB, Faculty of Sciences ING, 1st Year, Semester 1
+\\
+
+Department of Computer Science Exam: ISE
+\\
+
+Duration : 1h30 Academic Year: 2025–2026
+\\
+
+student ID: Name: Group:
+\\
+
+Exercise 1 (Course questions:) (5pts)
+\\
+
+1. What is the Shell and what is its main function in an operating system?
+\\
+
+Solution:
+\\
+
+2. What values are stored in the variable \$? and how can these values be interpreted?
+\\
+
+Solution:
+\\
+
+Exercise 2 (10pts) ⃝
+\\
+
+csh
+\\
+
+⃝
+\\
+
+ssh
+\\
+
+Tick the box corresponding to the correct
+\\
+
+answer for each question. -0.25 pt for
+\\
+
+3. (1 point) Howdoyouredirectthestan-
+\\
+
+each incorrect or unanswered ques-
+\\
+
+dard output of a command to the end
+\\
+
+tion.
+\\
+
+of a file named ?
+\\
+
+output.txt
+\\
+
+⃝
+\\
+
+ls > output.txt
+\\
+
+1. (1 point) Which command is used to
+\\
+
+search for all files in the directory
+\\
+
+⃝
+\\
+
+ls » output.txt
+\\
+
+that were modified dur-
+\\
+
+/home/user/
+\\
+
+⃝
+\\
+
+ls < output.txt
+\\
+
+ing the last 7 days?
+\\
+
+⃝
+\\
+
+ls | output.txt
+\\
+
+⃝
+\\
+
+find /home/user/ -mtime
+\\
+
+7
+\\
+
+4. (1 point) How can you execute a com-
+\\
+
+mand in the background while sup-
+\\
+
+⃝
+\\
+
+search /home/user/ -modified
+\\
+
+pressing its standard output?
+\\
+
+7
+\\
+
+⃝
+\\
+
+command \&> /dev/null \&
+\\
+
+⃝
+\\
+
+grep -r "/home/user/"
+\\
+
+-mtime 7
+\\
+
+⃝
+\\
+
+command > /dev/null \&
+\\
+
+⃝
+\\
+
+locate /home/user/ -modified
+\\
+
+⃝
+\\
+
+command \&!
+\\
+
+7
+\\
+
+⃝
+\\
+
+command -bg
+\\
+
+2. (1 point) Which of the following names
+\\
+
+5. (1 point) Which command is used to
+\\
+
+represent a shell version?
+\\
+
+display running processes and their
+\\
+
+⃝
+\\
+
+statistics in real time?
+\\
+
+sh
+\\
+
+⃝ ⃝
+\\
+
+ksh top
+\\
+
+⃝ ⃝
+\\
+
+ps -r head -n 5 report.txt
+\\
+
+⃝
+\\
+
+stats
+\\
+
+⃝
+\\
+
+cat -n report.txt | head
+\\
+
+-n 5
+\\
+
+⃝
+\\
+
+monitor
+\\
+
+⃝
+\\
+
+tail -n 5 report.txt
+\\
+
+6. (1 point) How can you change file per-
+\\
+
+missions so that the user has all rights,
+\\
+
+⃝
+\\
+
+nl report.txt | head -n
+\\
+
+thegrouphasread-onlyrights, andoth-
+\\
+
+5
+\\
+
+ers have no rights?
+\\
+
+8. (1 point) How can you rename the file
+\\
+
+⃝
+\\
+
+chmod 744 file.txt
+\\
+
+to using the com-
+\\
+
+old.txt new.txt
+\\
+
+⃝
+\\
+
+chmod u=rwx,g=r,o= file.txt
+\\
+
+mand line?
+\\
+
+⃝
+\\
+
+chmod u=rwx,g=,o= file.txt
+\\
+
+⃝
+\\
+
+rename "old.txt" "new.txt"
+\\
+
+⃝
+\\
+
+chmod 711 file.txt
+\\
+
+⃝
+\\
+
+mv "old.txt" "new.txt"
+\\
+
+7. (1 point) How can you display the first
+\\
+
+⃝
+\\
+
+cp "old.txt" "new.txt"
+\\
+
+five lines of the file while
+\\
+
+report.txt
+\\
+
+adding line numbers? ⃝
+\\
+
+ren "old.txt" "new.txt"
+\\
+
+Exercise 3 (5pts)
+\\
+
+Consider a directory named containing several text files with the following struc-
+\\
+
+Data
+\\
+
+ture: file1.txt: file2.txt:
+\\
+
+ID Name Quantity ID Name Quantity
+\\
+
+1 Product\_A 10 1 Product\_A 15
+\\
+
+2 Product\_B 5 2 Product\_B 10
+\\
+
+3 Product\_C 8 3 Product\_C 5
+\\
+
+Using the Linux commands , , , , , , and , answer the
+\\
+
+cat grep cut sort uniq join split
+\\
+
+following questions:
+\\
+
+1. Concatenate all the files in the Data directory into a file named TotalResult.txt.
+\\
+
+.................................................................................
+\\
+
+2. Extract only the lines containing product names.
+\\
+
+.................................................................................
+\\
+
+3. Sort the products in alphabetical order.
+\\
+
+.................................................................................
+\\
+
+4. Save the final result in a file named FinalResult.txt.
+\\
+
+.................................................................................
+\\
+
+Page 2
+\\
+
+\subsection*{Solutions}
+
+Exercise 1 – Course Questions (5 pts : 2.5 pts each)
+
+1. What is the Shell and what is its main function in an operating system?
+\\
+
+Solution: The shell is a command-line interpreter that acts as an interface
+\\
+
+between the user and the operating system. Its main function is to interpret
+\\
+
+and execute user commands, manage processes, and provide access to system
+\\
+
+services.
+\\
+
+Barème: Definition (1 pt) + Role/Function (1.5 pts)
+\\
+
+2. What values are stored in the variable \$? and how can these values be interpreted?
+\\
+
+Solution: The variable \$? stores the exit status of the last executed command.
+\\
+
+A value of 0 indicates successful execution, while any non-zero value indicates
+\\
+
+an error or abnormal termination.
+\\
+
+Barème: Meaning of \$? (1 pt) + Interpretation (1.5 pts)
+\\
+
+Exercise 2 – Multiple Choice Questions (10 pts : 1 pt / question,
+\\
+
+-0.25 penalty)
+\\
+
+1. Which command is used to search for all files modified during the last 7 days?
+\\
+
+√
+\\
+
+find /home/user/ -mtime -7
+\\
+
+⃝
+\\
+
+search /home/user/ -modified 7
+\\
+
+⃝
+\\
+
+grep -r "/home/user/" -mtime 7
+\\
+
+⃝
+\\
+
+locate /home/user/ -modified 7
+\\
+
+Correct answer: 1 pt
+\\
+
+2. Which of the following names represent a shell version?
+\\
+
+√
+\\
+
+sh
+\\
+
+√
+\\
+
+ksh
+\\
+
+√
+\\
+
+csh
+\\
+
+⃝
+\\
+
+ssh
+\\
+
+2 pt correct choice
+\\
+
+3. How do you redirect the standard output to the end of a file?
+\\
+
+⃝
+\\
+
+ls > output.txt
+\\
+
+√
+\\
+
+ls » output.txt
+\\
+
+Page 3
+\\
+
+⃝
+\\
+
+ls < output.txt
+\\
+
+⃝
+\\
+
+ls | output.txt
+\\
+
+Correct answer: 1 pt
+\\
+
+4. Execute a command in the background while suppressing its output?
+\\
+
+√
+\\
+
+command > /dev/null \&
+\\
+
+⃝
+\\
+
+command \&> /dev/null
+\\
+
+⃝
+\\
+
+command \&!
+\\
+
+⃝
+\\
+
+command -bg
+\\
+
+Correct answer: 1 pt
+\\
+
+5. Display running processes in real time?
+\\
+
+√
+\\
+
+top
+\\
+
+⃝
+\\
+
+ps -r
+\\
+
+⃝
+\\
+
+stats
+\\
+
+⃝
+\\
+
+monitor
+\\
+
+Correct answer: 1 pt
+\\
+
+6. Set permissions: user all rights, group read-only, others none?
+\\
+
+√
+\\
+
+chmod 740 file.txt
+\\
+
+√
+\\
+
+chmod u=rwx,g=r,o= file.txt
+\\
+
+⃝
+\\
+
+chmod 711 file.txt
+\\
+
+⃝
+\\
+
+chmod 744 file.txt
+\\
+
+\subsection*{pt correct answer}
+
+7. Display the first five lines with line numbers?
+
+⃝
+\\
+
+head -n 5 report.txt
+\\
+
+√
+\\
+
+cat -n report.txt | head -n 5
+\\
+
+√
+\\
+
+nl report.txt | head -n 5
+\\
+
+⃝
+\\
+
+tail -n 5 report.txt
+\\
+
+\subsection*{correct answer}
+
+8. Rename to ?
+
+old.txt new.txt
+\\
+
+⃝
+\\
+
+rename "old.txt" "new.txt"
+\\
+
+√
+\\
+
+mv old.txt new.txt
+\\
+
+⃝
+\\
+
+cp old.txt new.txt
+\\
+
+⃝
+\\
+
+ren old.txt new.txt
+\\
+
+Correct answer: 1 pt
+\\
+
+Page 4
+\\
+
+Exercise 3 – Linux Commands (5 pts)
+\\
+
+1. Concatenate all files into :
+\\
+
+TotalResult.txt
+\\
+
+cat Data/*.txt > TotalResult.txt
+\\
+
+\subsection*{pts}
+
+2. Extract only lines containing product names:
+
+grep "Product\_" TotalResult.txt
+\\
+
+1 pt
+\\
+
+3. Sort the products alphabetically:
+\\
+
+grep "Product\_" TotalResult.txt | sort
+\\
+
+1 pt
+\\
+
+4. Save the final result in :
+\\
+
+FinalResult.txt
+\\
+
+grep "Product\_" TotalResult.txt | sort > FinalResult.txt
+\\
+
+\subsection*{pts}
+
+Page 5
+
+\end{multicols}
+
+\end{document}
